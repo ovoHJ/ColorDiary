@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import ListView, CreateView, DeleteView, UpdateView
+from django.views.generic import ListView, CreateView, DeleteView, UpdateView, DetailView
 
 from diary.models import Diary
 
@@ -14,6 +14,10 @@ class DiaryCreateView(CreateView):
     fields = '__all__'
     template_name = 'diary/diary_create.html'
     success_url = reverse_lazy('diary:list')
+
+
+class DiaryDetailView(DetailView):
+    model = Diary
 
 
 class DiaryUpdateView(UpdateView):

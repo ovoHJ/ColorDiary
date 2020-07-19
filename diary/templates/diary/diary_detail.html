@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>일기작성 | 오색찬란</title>
+    <title>일기보기 | 오색찬란</title>
 </head>
 <body>
 <form action="" method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Add</button>
     <button type="button" onclick="history.back()">Cancel</button>
 </form>
 </body>

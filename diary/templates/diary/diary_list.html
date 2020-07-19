@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>리스트 | 오색찬란</title>
+    <title>오색찬란</title>
 </head>
 <body>
 <table>
@@ -21,13 +21,14 @@
         <tr>
             <td>{{ forloop.counter }}</td>
             <td><div style="width: 100px; height: 100px; background-color: {{ diary.color }}"></div></td>
-            <td>{{ diary.title }}</td>
+            <td><a href="{% url 'diary:detail' pk=diary.id %}">{{ diary.title }}</a></td>
             <td>{{ diary.date }}</td>
-            <td><a href="">Modify</a></td>
-            <td><a href="">Delete</a></td>
+            <td><a href="{% url 'diary:update' pk=diary.id %}">Modify</a></td>
+            <td><a href="{% url 'diary:delete' pk=diary.id %}">Delete</a></td>
         </tr>
         {% endfor %}
     </tbody>
 </table>
+<a href="{% url 'diary:create' %}">Create Diary</a>
 </body>
 </html>
