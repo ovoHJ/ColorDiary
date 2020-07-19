@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>리스트 | 오색찬란</title>
+</head>
+<body>
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Color</th>
+            <th>Title</th>
+            <th>Date</th>
+            <th>Modify</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for diary in diary_list %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td><div style="width: 100px; height: 100px; background-color: {{ diary.color }}"></div></td>
+            <td>{{ diary.title }}</td>
+            <td>{{ diary.date }}</td>
+            <td><a href="">Modify</a></td>
+            <td><a href="">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

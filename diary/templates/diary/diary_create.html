@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>일기작성 | 오색찬란</title>
+</head>
+<body>
+<form action="" method="post" enctype='multipart/form-data'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add</button>
+    <button type="button" onclick="history.back()">Cancel</button>
+</form>
+</body>
+</html>
