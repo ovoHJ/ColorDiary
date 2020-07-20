@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView, DetailView
 
@@ -27,6 +27,8 @@ class DiaryUpdateView(UpdateView):
     success_url = reverse_lazy('diary:list')
 
 
-class DiaryDeleteView(DeleteView):
-    model = Diary
-    success_url = reverse_lazy('diary:list')
+def diary_delete(request, pk):
+    diary = Diary.objects.get(id=pk)
+    diary.delete()
+
+    return redirect('diary:list')
